@@ -32,7 +32,7 @@
       <div class="weather-app-wrapper">
         <div class="weather-app">
           <div class="overview">
-            <h1 id="city">City</h1>
+            <h1 id="city"></h1>
             <ul>
               <li>Last updated: <span id="date"></span></li>
               <li id="description"></li>
@@ -41,10 +41,14 @@
           <div class="row">
             <div class="col-6">
               <div class="d-flex weather-temperature">
-                <img src="" alt="Clear" id="icon" />
+                <img
+                  src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
+                  alt="Clear"
+                  id="icon"
+                />
                 <div>
-                  <strong id="temperature"></strong>
-                  <span class="units"> °C</span>
+                  <span id="temperature"></span>
+                  <span class="units"> °C | <a href="#">°F</a> </span>
                 </div>
               </div>
             </div>
