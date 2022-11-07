@@ -1,0 +1,20 @@
+.weather-app-wrapper {
+  max-width: 600px;
+  margin: 30px auto;
+}
+.weather-app {
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 10px;
+  font-family: "Montserrat", sans-serif;
+}
+li {
+  list-style-type: none;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}

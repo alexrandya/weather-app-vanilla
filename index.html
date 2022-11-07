@@ -17,11 +17,49 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="src/style.css" />
+    <script
+      src="https://kit.fontawesome.com/eb3e705cd9.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;1,100;1,200;1,300&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
   <body>
     <div class="container">
-      <h1>Weather</h1>
-      <button type="button" class="btn btn-primary">Primary</button>
+      <div class="weather-app-wrapper">
+        <div class="weather-app">
+          <div class="overview">
+            <h1 id="city">City</h1>
+            <ul>
+              <li>Last updated: <span id="date"></span></li>
+              <li id="description"></li>
+            </ul>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <div class="d-flex weather-temperature">
+                <img src="" alt="Clear" id="icon" />
+                <div>
+                  <strong id="temperature"></strong>
+                  <span class="units"> °C</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <ul>
+                <li>Humidity: <span id="humidity"></span></li>
+                <li>Wind: <span id="wind"></span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <small>
+          <a href="" target="_blank">Open-source code</a> by Alexandria Ritchie
+        </small>
+      </div>
     </div>
     <script src="src/app.js"></script>
   </body>
