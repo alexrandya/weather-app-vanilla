@@ -38,15 +38,31 @@ function displayTemperature(response) {
   let windElement = document.querySelector("#wind");
   let dateElement = document.querySelector("#date");
   let iconElement = document.querySelector("#icon");
+  let minimumElement = document.querySelector("#minimum");
+  let maximumElement = document.querySelector("#maximum");
   temperatureElement.innerHTML = Math.round(response.data.temperature.current);
   cityElement.innerHTML = response.data.city;
   descriptionElement.innerHTML = response.data.condition.description;
   humidityElement.innerHTML = response.data.temperature.humidity;
   windElement.innerHTML = response.data.wind.speed;
   dateElement.innerHTML = formatDate(response.data.time * 1000);
+  iconElement.setAttribute("src", response.data.condition.icon_url);
+  iconElement.setAttribute("alt", response.data.condition.icon);
+  minimumElement.setAttribute = response.data.temperature.minimum;
+  maximumElement.setAttribute = response.data.temperature.maximum;
 }
 
-let apiKey = "3f048o370b851f47987824te386a0354";
-let apiUrl =
-  "https://api.shecodes.io/weather/v1/current?lat=38.71667&lon=-9.13333&key=3f048o370b851f47987824te386a0354&units=metric";
-axios.get(apiUrl).then(displayTemperature);
+function search(city) {
+  let apiKey = "3f048o370b851f47987824te386a0354";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayTemperature);
+}
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#city-input");
+  search(cityInputElement.value);
+}
+search("New York");
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);

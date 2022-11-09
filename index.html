@@ -31,6 +31,33 @@
     <div class="container">
       <div class="weather-app-wrapper">
         <div class="weather-app">
+          <form id="search-form" class="mb-3">
+            <div class="row">
+              <div class="col-8">
+                <input
+                  type="search"
+                  placeholder="Type a city.."
+                  class="form-control"
+                  id="city-input"
+                  autocomplete="off"
+                />
+              </div>
+              <div class="col-2">
+                <input
+                  type="submit"
+                  value="Search"
+                  class="btn btn-info btn-sm"
+                />
+              </div>
+              <div class="col-2">
+                <input
+                  type="submit"
+                  value="Current"
+                  class="btn btn-info btn-sm"
+                />
+              </div>
+            </div>
+          </form>
           <div class="overview">
             <h1 id="city"></h1>
             <ul>
@@ -41,21 +68,23 @@
           <div class="row">
             <div class="col-6">
               <div class="d-flex weather-temperature">
-                <img
-                  src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
-                  alt="Clear"
-                  id="icon"
-                />
+                <img src="" alt="Clear" id="icon" />
                 <div>
                   <span id="temperature"></span>
                   <span class="units"> °C | <a href="#">°F</a> </span>
                 </div>
               </div>
             </div>
-            <div class="col-6">
+            <div class="col-3">
               <ul>
                 <li>Humidity: <span id="humidity"></span></li>
                 <li>Wind: <span id="wind"></span></li>
+              </ul>
+            </div>
+            <div class="col-3">
+              <ul>
+                <li>Low: <span id="minimum"></span></li>
+                <li>High: <span id="maximum"></span></li>
               </ul>
             </div>
           </div>
