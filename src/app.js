@@ -25,15 +25,7 @@ function formatDate(timestamp) {
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let day = date.getDay();
-  let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
+  let days = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"];
 
   return days[day];
 }
@@ -87,8 +79,7 @@ function displayTemperature(response) {
   let windElement = document.querySelector("#wind");
   let dateElement = document.querySelector("#date");
   let iconElement = document.querySelector("#icon");
-  let minimumElement = document.querySelector("#minimum");
-  let maximumElement = document.querySelector("#maximum");
+  let feelslikeElement = document.querySelector("#feelslike");
 
   celsiusTemperature = response.data.temperature.current;
 
@@ -100,9 +91,7 @@ function displayTemperature(response) {
   dateElement.innerHTML = formatDate(response.data.time * 1000);
   iconElement.setAttribute("src", response.data.condition.icon_url);
   iconElement.setAttribute("alt", response.data.condition.icon);
-  minimumElement.setAttribute = response.data.temperature.minimum;
-  maximumElement.setAttribute = response.data.temperature.maximum;
-
+  feelslikeElement.innerHTML = Math.round(response.data.temperature.feels_like);
   getForecast(response.data.coordinates);
 }
 
